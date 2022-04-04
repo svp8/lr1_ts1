@@ -44,11 +44,14 @@ public class Work {
                         deleteRequest(number);}
 
                     break;
-                case 6:
+                case 7:
                     flag=false;
                     break;
                 case 5:
                     createRequest();
+                    break;
+                case 6:
+                    createClient();
                     break;
                 default:
                     System.out.println("bruh");
@@ -64,8 +67,9 @@ public class Work {
         System.out.println("3. Изменить запрос");
         System.out.println("4. Удалить запрос");
         System.out.println("5. Создать запрос");
+        System.out.println("6. Зарегестрировать клиента");
 
-        System.out.println("6. Выйти из программы");
+        System.out.println("7. Выйти из программы");
 
 
     }
@@ -133,7 +137,6 @@ public class Work {
         temp=in.nextLine();
         System.out.println("Введите дату запроса");
         tempRequest.setDateOfRequest(in.nextLine());
-        temp=in.nextLine();
         System.out.println("Введите причину");
         tempRequest.setReason(in.nextLine());
         System.out.println("Введите цену");
@@ -141,10 +144,25 @@ public class Work {
         temp=in.nextLine();
         System.out.println("Введите дату передачи");
         tempRequest.setDateOfTransfer(in.nextLine());
-        temp=in.nextLine();
         System.out.println("Введите id клиента");
         tempRequest.setClientId(in.nextInt());
         requestArray.add(tempRequest);
+    }
+    public void createClient(){
+        String temp;
+        Client tempClient=new Client();
+
+        System.out.println("Введите id клиента");
+        tempClient.setId(in.nextInt());
+        temp=in.nextLine();
+        System.out.println("Введите ФИО");
+        tempClient.setFIO(in.nextLine());
+        System.out.println("Введите марку");
+        tempClient.setBrand(in.nextLine());
+        System.out.println("Введите модель");
+        tempClient.setModel(in.nextLine());
+
+        clientArray.add(tempClient);
     }
     public void deleteRequest(int number){
         requestArray.remove(number);

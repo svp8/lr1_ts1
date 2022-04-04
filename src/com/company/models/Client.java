@@ -11,7 +11,12 @@ public class Client {
         this.brand=brand;
         this.model=model;
     }
-
+    public Client(){
+        this.id=999;
+        this.FIO="-";
+        this.brand="-";
+        this.model="-";
+    }
 
     public String getBrand() {
         return brand;
