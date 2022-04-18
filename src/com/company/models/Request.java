@@ -18,7 +18,12 @@ public class Request {
         this.clientId=clientId;
     }
     public Request(){
-
+        this.id=999;
+        this.dateOfRequest = "dt";
+        this.reason = "reason";
+        this.price = 10;
+        this.dateOfTransfer = "dateOfTransfer";
+        this.clientId=1;
     }
 
     public String getDateOfTransfer() {
